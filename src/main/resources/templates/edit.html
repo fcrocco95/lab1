@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>MVC Web application</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+<h1>Edit a record</h1>
+
+<h3>Person to be changed:</h3>
+<table border="1">
+   <thead>
+   <tr>
+       <th>Id</th>
+       <th>Name</th>
+       <th>Surname</th>
+   </tr>
+   </thead>
+   <tbody>
+   <tr th:each="person: ${people}">
+       <td th:text="${person.id}"> <b>10 </b></td>
+       <td th:text="${person.firstName}"> John </td>
+       <td th:text="${person.lastName}"> Smith </td>
+   </tr>
+   </tbody>
+</table>
+<br>
+
+<form action="update" method="post">
+   New name:<input type="text" name="firstname"><br>
+   New surname:<input type="text" name="lastname"><br>
+   <input type="submit" />
+</form>
+
+<a href="list"> Show the list </a>
+
+</body>
+</html>
